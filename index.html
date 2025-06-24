@@ -138,9 +138,43 @@
 
         .weather-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 20px;
             margin-bottom: 30px;
+        }
+
+        .quality-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .compact-card {
+            padding: 20px;
+        }
+
+        .compact-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .compact-content {
+            text-align: center;
+        }
+
+        .compact-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .compact-description {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            line-height: 1.3;
         }
 
         .weather-card {
@@ -278,17 +312,23 @@
         }
 
         .hourly-scroll::-webkit-scrollbar {
-            height: 8px;
+            height: 12px;
         }
 
         .hourly-scroll::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 58, 138, 0.15);
             border-radius: 10px;
+            border: 1px solid rgba(30, 58, 138, 0.2);
         }
 
         .hourly-scroll::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(30, 58, 138, 0.6);
             border-radius: 10px;
+            border: 1px solid rgba(30, 58, 138, 0.8);
+        }
+
+        .hourly-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(30, 58, 138, 0.8);
         }
 
         .hourly-item {
@@ -352,6 +392,10 @@
 
         @media (max-width: 768px) {
             .weather-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quality-cards {
                 grid-template-columns: 1fr;
             }
             
@@ -432,24 +476,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="weather-card">
-                    <div class="section-title">Air Quality</div>
-                    <div class="detail-item">
-                        <div class="detail-label">AQI</div>
-                        <div class="detail-value" id="airQuality">--</div>
-                    </div>
-                    <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;" id="aqiDescription">Loading...</div>
-                </div>
-
-                <div class="weather-card">
-                    <div class="section-title">Pollen Count</div>
-                    <div class="detail-item">
-                        <div class="detail-label">Level</div>
-                        <div class="detail-value" id="pollenCount">--</div>
-                    </div>
-                    <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;" id="pollenDescription">Loading...</div>
-                </div>
             </div>
 
             <div class="hourly-container">
@@ -463,6 +489,24 @@
                 <div class="section-title">5-Day Forecast</div>
                 <div class="forecast-grid" id="forecastGrid">
                     <!-- Forecast items will be populated here -->
+                </div>
+            </div>
+
+            <div class="quality-cards">
+                <div class="weather-card compact-card">
+                    <div class="compact-title">Air Quality</div>
+                    <div class="compact-content">
+                        <div class="compact-value" id="airQuality">--</div>
+                        <div class="compact-description" id="aqiDescription">Loading...</div>
+                    </div>
+                </div>
+
+                <div class="weather-card compact-card">
+                    <div class="compact-title">Pollen Count</div>
+                    <div class="compact-content">
+                        <div class="compact-value" id="pollenCount">--</div>
+                        <div class="compact-description" id="pollenDescription">Loading...</div>
+                    </div>
                 </div>
             </div>
         </div>
