@@ -7,3 +7,5 @@ If you were successful, you would see something similar to the following:
 https://lt000lt.github.io/WeatherPulse
 
 To look at the code, go to https://github.com/lt000lt/WeatherPulse/. 
+
+Submit ideas and feedback as a GitHub pull request at https://github.com/lt000lt/WeatherPulse/.
